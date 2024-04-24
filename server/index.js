@@ -14,11 +14,11 @@ const {
   DB_NAME,
 } = process.env;
 
-const MONGO_URI = `mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?authSource=admin`
 
 // Connect DB
 mongoose
-  .connect(MONGO_URI,{ useNewUrlParser: true, useUnifiedTopology: true })
+  // .connect("mongodb+srv://oussamaaboudan:GpbMskQHcpUAUVAD@cluster0.sxvfpuv.mongodb.net/",{ useNewUrlParser: true, useUnifiedTopology: true,family: 4})
+  .connect("mongodb://host.docker.internal:27017/oussamaDb",{ useNewUrlParser: true, useUnifiedTopology: true,family: 4})
   .then(() => console.log("mongoDB is connected"))
   .catch((err) => console.log(err));
 
@@ -30,3 +30,4 @@ app.use(cors());
 app.use("/user", require("./routes/user"));
 
 app.listen(5000, () => console.log("Server is running on port 5000"));
+//aymen 
