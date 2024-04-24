@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 
 dotenv.config();
-
+//checlk
 const {
   DB_USER,
   DB_PASSWORD,
